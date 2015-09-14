@@ -1,0 +1,136 @@
+@import "variables";
+
+.controls__group {
+    background: $secondary-shadow;
+    box-shadow: inset 0 -1px 0 0 hsla($secondary-hue,30%,40%,.1),
+             inset 0 1px 0 0 hsla($secondary-hue,10%,5%,.35),
+             0 0 1px 0 hsla($secondary-hue,10%,5%,.5);
+    border-radius: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px;
+}
+.group--inline {
+    @extend .controls__group;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.group--inline__wrapper {
+    flex: 0 0 66%;
+}
+.oct-control {
+    flex: 0 0 33%;
+}
+.controls__group--inline {
+    @extend .controls__group;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+}
+.controls__group--inline > * {
+    flex: 0 0 50%;
+}
+.controls__group--temperament {
+    // @extend .controls__group;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    // margin: 0 6px;
+}
+.controls__group2 {
+    display: flex;
+    flex: 0 0 66%;
+    justify-content: space-between;
+}
+.controls__group--osc,
+.controls__group--osc--small {
+    @extend .controls__group;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.controls__group--display {
+    @extend .controls__group;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+.sliders--stacked {
+    background: $secondary-shadow;
+    box-shadow: inset 0 -1px 0 0 hsla($secondary-hue,30%,40%,.1),
+         inset 0 1px 0 0 hsla($secondary-hue,10%,5%,.35),
+         0 0 1px 0 hsla($secondary-hue,10%,5%,.5);
+    border-radius: 1px;
+    display: flex;
+    flex: 0 0 33%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 0 12px 12px;
+    padding: 12px;
+}
+.controls__group--env {
+    @extend .controls__group;
+
+    background: transparent;
+    box-shadow: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    transform: rotate(270deg) translate(-12px, 27px);
+    width: 72px;
+}
+.controls__group--stacked {
+    @extend .controls__group;
+    flex: 0 0 66%;
+    flex-direction: column;
+    margin-bottom: 12px;
+    margin-right: 12px;
+}
+.controls__group--compressor {
+    @extend .controls__group;
+    flex: 0 0 33%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 12px;
+}
+.osc-detune__wrapper,
+.osc-group .controls__group--osc {
+    flex: 0 0 50%;
+}
+.osc-detune,
+.osc-group {
+    display: flex;
+    justify-content: space-between;
+}
+.osc-detune .controls__label--slider {
+    flex: 0 0 33%;
+}
+.delay-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.delay-group > * {
+    flex: 0 0 100%;
+}
+.filter-group {
+    display: flex;
+    justify-content: space-between;
+}
+.filter-group > * {
+    flex: 0 0 33%;
+}
+.osc-params {}
+.lfo-group {
+    display: flex;
+    justify-content: space-between;
+}
+.lfo-group > * {
+    flex: 0 0 25%;
+}

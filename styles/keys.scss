@@ -1,0 +1,79 @@
+@import "variables";
+
+.piano__keys {
+	background-image: $keys-bg;
+	border-bottom: 4px solid hsla($secondary-hue,20%,20%,.9);
+	border-left: 3px solid hsla($secondary-hue,20%,20%,1);
+	border-right: 3px solid hsla($secondary-hue,20%,20%,1);
+	box-shadow: 0 6px 0 0 hsla(8,6%,8%,.25);
+	display: flex;
+	height: 234px;
+	margin: 0 18px;
+	position: relative;
+	overflow-x: hidden;
+	z-index: -1;
+}
+.key {
+	background-clip: padding-box;
+	background-color: hsla(8,6%,88%,1);
+		border: 1px solid hsla(8,6%,85%,.1);
+	border-radius: 0 0 2px 2px;
+	box-shadow: inset 0 -3px 0 0 hsla(8,3%,28%,.5),
+				0 2px 0 0 hsla(340,25%,55%,.15);
+	cursor: pointer;
+	height: 230px;
+	margin: 0 1px 0 -2px;
+	position: relative;
+	top: -4px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	width: 48px;
+}
+.key.black {
+	background-color: hsla(8,3%,16%,1);
+	border: none;
+	border-radius: 0 0 4px 4px;
+	box-shadow: none;
+	box-shadow: inset 0 6px 0 3px hsla(8,3%,8%,.75),
+				inset 6px 0 0 0 hsla(8,3%,10%,.5),
+				inset -6px 0 0 0 hsla(8,3%,10%,.5),
+				inset 0 -24px 0 -12px hsla(8,3%,35%,.3),
+				inset 0 -30px 0 -12px hsla(8,3%,35%,.2),
+				inset 0 -12px 0 6px hsla(8,3%,10%,1),
+				0 6px 0 -2px hsla(8,3%,32%,.18);
+	height: 154px;
+	margin: 0 -18px 0 -15px;
+	max-width: 33px;
+	min-width: 33px;
+	position: relative;
+	top: -4px;
+	width: 33px;
+	z-index: 1;
+}
+.key:hover {
+	background-image: linear-gradient(
+					hsla(8,6%,98%,.85) 230px,
+					hsla(8,6%,98%,.35) 230px
+				);
+}
+.key:active {
+	box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1),
+				inset 0 -2px 2px -2px rgba(0,0,0,.1);
+}
+.key.black:hover {
+	background-color: hsla(8,3%,12%,1);
+	background-image: none;
+	box-shadow: inset 0 6px 0 3px hsla(8,3%,8%,.65),
+			inset 6px 0 0 0 hsla(8,3%,10%,.5),
+			inset -6px 0 0 0 hsla(8,3%,10%,.5),
+			inset 0 -24px 0 -12px hsla(8,3%,35%,.2),
+			inset 0 -30px 0 -12px hsla(8,3%,35%,.1),
+			inset 0 -12px 0 6px hsla(8,3%,10%,1),
+			0 6px 0 -2px hsla(8,3%,32%,.18);
+}
+.key.black:active {
+	// border-color: #040f10;
+	// box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1),
+	// 			inset 0 -2px 2px -2px rgba(0,0,0,.1);
+}

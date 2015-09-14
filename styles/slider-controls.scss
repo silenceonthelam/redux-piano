@@ -1,0 +1,53 @@
+@import "variables";
+
+.small-sliders {
+	margin: 6px 0 0;
+}
+
+.controls__slider {
+	@include slider;
+}
+
+.controls__slider--small {
+	@include slider;
+
+	background-color: transparent;
+	box-shadow: none;
+	flex: 0 0 66%;
+	margin: 1px 0 0 0;
+	padding: 0;
+
+}
+.controls__slider--small::-webkit-slider-thumb {
+	height: 6px;
+	margin: -1px 0 0 0;
+	width: 15px;
+}
+.controls__slider--small::-webkit-slider-runnable-track {
+	
+}
+
+.controls__slider--env {
+	@include slider;
+	margin: 6px -24px 0px 0;
+	padding: 3px;
+	padding-right: 18px;
+	width: 81px;
+}
+.controls__slider--env::-webkit-slider-thumb {
+	height: 9px;
+	position: relative;
+	top: 0px;
+	width: 15px;
+}
+.controls__slider--env::-webkit-slider-runnable-track {
+	background-image: linear-gradient(
+		90deg,
+	    hsla($secondary-hue,40%,30%,1),
+	    hsla($main-hue,100%,30%,1)
+	);
+	display: inline-block;
+	height: 3px;
+	// margin-right: -10px;
+	// width: 120px;
+}

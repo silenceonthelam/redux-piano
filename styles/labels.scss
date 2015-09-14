@@ -1,0 +1,135 @@
+@import "variables";
+
+.controls__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.controls__label--compressor {
+    @extend .controls__label;
+    align-items: flex-start;
+    text-align: left;
+}
+.controls__label--env {
+    @extend .controls__label;
+    flex-direction: row;
+}
+.controls__label--osc,
+.controls__label--temperament {
+    @extend .controls__label;
+
+    flex-direction: column;
+    justify-content: space-around;
+}
+.controls__label--temperament {
+    flex: 0 0 25%;
+}
+
+.controls__label--osc--small {
+    @extend .controls__label;
+
+    flex-direction: column;
+    justify-content: space-around;
+}
+.controls__group--osc2 .controls__label--osc {
+    flex: 0 0 100%;
+}
+.controls__label--slider {
+    @extend .controls__label;
+    // flex: 1 1 33%;
+    flex-direction: column;
+    // justify-content: space-around;
+    margin-top: -1px;
+}
+.controls__label--slider--small {
+    @extend .controls__label--slider;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.controls__label__text {
+    @include label-text;
+}
+.controls__label__text--compressor {
+    @extend .controls__label__text;
+    line-height: 9px;
+}
+.controls__label__text--env {
+    @extend .controls__label__text;
+    position: relative;
+    right: -12px;
+    top: 3px;
+    transform: rotate(90deg);
+}
+.controls__label__text--head {
+    @extend .controls__label__text;
+    @include label-text-dark;
+    letter-spacing: 1px;
+    position: relative;
+    right: 0;
+    top: -9px;
+    width: 100%;
+}
+.controls__label__text--osc,
+.controls__label__text--temperament {
+    @extend .controls__label__text;
+
+    display: block;
+    text-align: center;
+}
+.controls__label__text--osc--small {
+    @extend .controls__label__text;
+
+    display: block;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+}
+.controls__label__text--slider {
+    @extend .controls__label__text;
+
+    // line-height: 15px;
+}
+.controls__label__text--slider--small {
+    @extend .controls__label__text;
+    flex: 0 0 33%;
+    font-size: 8px;
+    line-height: 15px;
+    text-align: left; 
+}
+.controls__label__text--stacked {
+    @extend .controls__label__text;
+    display: block;
+        // margin-bottom: 3px;
+    text-align: left;
+}
+.controls__label__text--checked {
+    @extend .controls__label__text;
+    @include label-text-lt;
+}
+.controls__label__text--stacked--checked {
+    @extend .controls__label__text--stacked;
+    @include label-text-lt;
+    text-align: left;
+}
+.controls__label__text--osc--checked,
+.controls__label__text--temperament--checked  {
+    @extend .controls__label__text--osc;
+    @include label-text-lt;
+    text-align: center;
+}
+.controls__label__text--osc--small--checked {
+    @extend .controls__label__text--osc;
+    @include label-text-lt;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+}
+.param__title {
+    color: darken(desaturate($text-color-lt, 60%), 40%);
+    font-family: "roboto";
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-align: center;
+    text-transform: uppercase;
+}

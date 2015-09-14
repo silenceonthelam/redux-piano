@@ -1,0 +1,23 @@
+@import "variables";
+
+.controls__btn--round {
+	@include radio;
+	border-radius: 50%;
+	height: 21px;
+	margin: auto;
+	width: 21px;
+}
+.controls__btn--square {
+	@include radio;
+	border-radius: 1px;
+	height: 20px;
+    margin: auto;
+	width: 21px;
+}
+.controls__btn--round--small {
+    @include radio;
+    border-radius: 50%;
+    height: 15px;
+    margin: auto;
+    width: 15px;
+}

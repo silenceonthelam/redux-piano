@@ -1,0 +1,124 @@
+$main-hue: 160;
+$secondary-hue: 191;
+$highlight-hue: 8;
+
+$main-bg: hsla(160,100%,30%,1);
+$secondary-bg: hsla($secondary-hue,30%,30%,1);
+$highlight-bg: hsla($secondary-hue,20%,15%,1);
+$display-bg: hsla($secondary-hue,85%,80%,1);
+$display-bg-dark: hsla($secondary-hue,65%,75%,1);
+
+$highlight-bg-middle: hsla($highlight-hue,65%,55%,1);
+$highlight-bg-dark: hsla($highlight-hue,35%,50%,1);
+$highlight-bg-darker: hsla($highlight-hue,50%,40%,1);
+$highlight-shadow: hsla($highlight-hue,50%,40%,.1);
+
+$secondary-bg-middle: hsla($secondary-hue,15%,18%,1);
+$secondary-bg-dark: hsla($secondary-hue,15%,20%,1);
+$secondary-bg-darker: hsla($secondary-hue,10%,30%,1);
+$secondary-bg-darkest: hsla($secondary-hue,10%,5%,.2);
+
+$secondary-shadow: linear-gradient(
+                        hsla($secondary-hue,20%,20%,.5) 70%,
+                        hsla($secondary-hue,25%,25%,.5)
+                    );
+
+$button-bg: hsla($secondary-hue,52%,55%,1);
+$button-bg-off: hsla($secondary-hue,30%,50%,1);
+
+    // $text-color: hsla($secondary-hue,35%,40%,1);
+$text-color: hsla($secondary-hue,30%,55%,1);
+$text-color-lt: hsla($secondary-hue,80%,75%,1);
+$text-color-dark: hsla($secondary-hue,20%,30%,1);
+// $text-color-dark: hsla($secondary-hue,50%,45%,1);
+$text-color-sat: hsla($secondary-hue,60%,50%,1);
+
+$keys-bg: linear-gradient(
+              hsla(8,6%,78%,.85) 228px,
+              hsla(8,6%,8%,1) 228px
+          );
+
+@mixin label-text {
+    color: $text-color;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .6px;
+    line-height: 18px;
+    text-align: center;
+    text-shadow: 0 -1px 0 hsla($secondary-hue,0%,10%,.35);
+    text-transform: uppercase;
+}
+
+@mixin label-text-lt {
+    @include label-text;
+    color: hsla($secondary-hue,50%,60%,1);
+    text-shadow: 0 -1px 0 hsla($secondary-hue,0%,10%,.5),
+                0 0 6px hsla($secondary-hue,95%,55%,.25),
+                0 0 12px hsla($secondary-hue,95%,55%,.25);
+}
+
+@mixin label-text-dark {
+    @include label-text;
+
+    color: $text-color-dark;
+}
+
+@mixin radio {
+    -webkit-appearance: none;
+    background-color: $button-bg-off;
+    box-shadow: inset 0 1px 0 0 hsla($secondary-hue,30%,100%,.2),
+            inset 0 4px 0 0 hsla($secondary-hue,30%,60%,.1),
+            inset 0 5px 0 0 hsla($secondary-hue,60%,10%,.1),
+            inset 0 -1px 0 0 hsla($secondary-hue,60%,10%,.5),
+            0 2px 0 0 hsla($secondary-hue,30%,35%,1),
+            0 2px 0 1px hsla($secondary-hue,10%,5%,.35);
+    cursor: pointer;
+    position: relative;
+    top: 0;
+
+    &:checked {
+        background-color: $button-bg;
+        box-shadow: inset 0 -1px 0 0 hsla($secondary-hue,100%,95%,.2),
+                0 0 3px 2px hsla($secondary-hue,100%,50%,.25),
+                0 0 12px 6px hsla($secondary-hue,100%,50%,.15),
+                0 0 0 1px hsla($secondary-hue,10%,5%,.5);
+        top: 1px;
+    }
+}
+
+@mixin slider {
+    -webkit-appearance: none;
+    background-color: hsla($secondary-hue,20%,18%,1);
+    box-shadow: inset 0 0 1px 0 hsla($secondary-hue,10%,5%,.75);
+    cursor: pointer;
+    border-radius: 1px;
+    margin: 3px 0 0 0;
+    padding: 3px;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: $button-bg;
+        background-color: hsla($secondary-hue,35%,50%,1);
+        border-radius: 1px;
+        height: 9px;
+        margin: -3px 0 0 0;
+        width: 21px;
+    }
+
+    &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        background-color: hsla($secondary-hue,35%,50%,.5);
+        background-image: linear-gradient(
+            90deg,
+            hsla($secondary-hue,40%,30%,1),
+            hsla($main-hue,100%,30%,1)
+        );
+        border-radius: 1px;
+        height: 3px;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}

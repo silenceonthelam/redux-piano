@@ -1,0 +1,54 @@
+{
+  "name": "ReactPiano",
+  "version": "0.3.0",
+  "description": "",
+  "keywords": [
+    "flux",
+    "react",
+    "web audio",
+    "webpack"
+  ],
+  "dependencies": {
+    "object-assign": "^3.0.0",
+    "keymirror": "^0.1.1",
+    "flux": "^2.0.3",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "autoprefixer-loader": "^2.0.0",
+    "babel-core": "^5.8.21",
+    "babel-eslint": "^4.0.0",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.15.6",
+    "eslint": "^0.24.1",
+    "eslint-loader": "^0.14.2",
+    "eslint-plugin-react": "^3.0.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.36",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.6.0",
+    "node-sass": "^3.2.0",
+    "phantomjs": "^1.9.17",
+    "react-hot-loader": "^1.2.8",
+    "sass-loader": "^2.0.0",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "scripts": {
+    "dist": "webpack -p --config webpack.dist.config.js",
+    "start": "node server",
+    "test": "karma-start",
+    "lint": "npm run lint-js && npm run lint-css",
+    "lint-js": "eslint . --ext .js --ext .jsx",
+    "lint-css": "csslint app/stylesheets --quiet"
+  },
+  "author": "Jessie Schalles",
+  "license": "MIT"
+}

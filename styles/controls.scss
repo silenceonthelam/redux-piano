@@ -1,0 +1,68 @@
+@import "variables";
+
+.piano__controls {
+	background-color: $highlight-bg;
+	border-radius: 3px 3px 1px 1px;
+	box-shadow: inset 0 2px 0 0 hsla($secondary-hue,30%,40%,.1),
+				inset 0 -1px 0 0 hsla($secondary-hue,10%,5%,.2);
+	display: flex;
+	justify-content: space-between;
+	margin: 12px 12px 0;
+	padding: 12px;
+	padding-bottom: 0;
+	position: relative;
+}
+.piano__controls::before {
+	bottom: -3px;
+	box-shadow: -6px 12px 18px 0 hsla($secondary-hue,20%,10%,1);
+	content: "";
+	height: 252px;
+	left: 9px;
+	position: absolute;
+	transform: skew(-1.5deg);
+	width: 30px;
+	z-index: -1;
+}
+.piano__controls::after {
+	bottom: -1px;
+	border-radius: 3px;
+	box-shadow: 6px 12px 18px 0 hsla($secondary-hue,20%,10%,1);
+	content: "";
+	height: 252px;
+	right: 9px;
+	position: absolute;
+	transform: skew(1.5deg);
+	width: 30px;
+	z-index: -1;
+}
+.piano__controls__col {
+	display: flex;
+	flex: 0 0 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	height: 252px;
+	justify-content: space-between;
+	max-width: 480px;
+}
+.piano__controls__col--one-third,
+.piano__controls__col--two-thirds {
+	@extend .piano__controls__col;
+
+	flex: 0 0 33%;
+	flex-direction: column;
+}
+.piano__controls__col--two-thirds {
+	flex: 0 0 66%;
+}
+.piano__controls__col--mid {
+	@extend .piano__controls__col;
+
+	flex-direction: column;
+	margin: 0 12px;
+}
+.piano__controls__col--env {
+	@extend .piano__controls__col;
+
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
